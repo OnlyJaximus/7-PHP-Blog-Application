@@ -20,7 +20,7 @@ if (isset($_POST['add_user'])) {
         header('Location: view-register.php');
         exit;
     } else {
-        $_SESSION['message'] = "Something Went Wrong! Adding 1";
+        $_SESSION['message'] = "Went Wrong! Adding 1";
         header('Location: view-register.php');
         exit;
     }
@@ -266,7 +266,6 @@ if (isset($_POST['user_delete'])) {
         exit(0);
     }
 }
-
 
 // Update User
 if (isset($_POST['update_user'])) {
