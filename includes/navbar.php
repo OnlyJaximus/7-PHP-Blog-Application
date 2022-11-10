@@ -54,7 +54,10 @@
                             <?php echo $_SESSION['auth_user']['user_name']; ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">My Profile</a></li>
+                              <?php if ($_SESSION['auth_role'] == "1" || $_SESSION['auth_role'] == "2") : ?>
+                                <li><a class="dropdown-item" href="admin/index.php">My Profile</a></li>
+                            <?php endif; ?>
+                           
                             <li>
                                 <form action="allcode.php" method="POST">
                                     <button type="submit" name="logout_btn" class="dropdown-item">Logout</button>
