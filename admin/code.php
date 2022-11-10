@@ -1,5 +1,32 @@
 <?php include('authentication.php');
 
+
+//Adding User/Admin
+if (isset($_POST['add_user'])) {
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $role_as = $_POST['role_as'];
+    $status = $_POST['status'] == true ? '1' : '0';
+
+    $query = "INSERT INTO users(fname, lname, email, password, role_as, status) 
+             VALUES ('$fname', '$lname', '$email', '$password', '$role_as', '$status')";
+
+    $query_run_add_user = mysqli_query($con, $query);
+
+    if ($query_run_add_user) {
+        $_SESSION['message'] = "Admin/User Added Successfully";
+        header('Location: view-register.php');
+        exit;
+    } else {
+        $_SESSION['message'] = "Something Went Wrong! Adding 1";
+        header('Location: view-register.php');
+        exit;
+    }
+}
+
+
 // Delete Post
 if (isset($_POST['post_delete_btn'])) {
 
@@ -238,44 +265,7 @@ if (isset($_POST['user_delete'])) {
         header('Location: view-register.php');
         exit(0);
     }
-} else {
-    $_SESSION['message'] = "2222222Something Went Wrong!";
-    header('Location: view-register.php');
-    exit(0);
 }
-
-
-
-//Adding User/Admin
-if (isset($_POST['add_user'])) {
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $role_as = $_POST['role_as'];
-    $status = $_POST['status'] == true ? '1' : '0';
-
-    $query = "INSERT INTO users(fname, lname, email, password, role_as, status) 
-             VALUES ('$fname', '$lname', '$email', '$password', '$role_as', '$status')";
-
-    $query_run_add_user = mysqli_query($con, $query);
-
-    if ($query_run_add_user) {
-        $_SESSION['message'] = "Admin/User Added Successfully";
-        header('Location: view-register.php');
-        exit(0);
-    } else {
-        $_SESSION['message'] = "sssssssssSomething Went Wrong!";
-        header('Location: view-register.php');
-        exit(0);
-    }
-} else {
-    $_SESSION['message'] = "sssssssssSomething Went Wrong!";
-    header('Location: view-register.php');
-    exit(0);
-}
-
-
 
 
 // Update User
