@@ -54,4 +54,5 @@ Dashboard -  All statistics are shown on the dashboard. Eg: Total Categories, To
 ![12](https://user-images.githubusercontent.com/56784702/201108222-2e6dc108-31bf-41e8-bae1-62611d32705a.png)
 ![13](https://user-images.githubusercontent.com/56784702/201108229-64ae6de0-b84e-4361-b56d-c06bde529b36.png)
 ![14](https://user-images.githubusercontent.com/56784702/201108237-35322440-8b9a-41cd-a695-0b23c336d835.png)
+![15](https://user-images.githubusercontent.com/56784702/203370533-ce51ae48-7104-41dd-9528-fda409d47b6e.png)
 
